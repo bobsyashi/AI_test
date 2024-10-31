@@ -4,6 +4,8 @@ from sklearn.model_selection import train_test_split
 
 data = pd.read_csv('num.csv')
 
+data['number'] = pd.to_numeric(data['number'], errors='coerce')
+
 x = data.drop(columns = ['number'])
 
 y = data['number']
