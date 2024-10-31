@@ -2,11 +2,11 @@ import pandas as pd
 import tensorflow as tf
 from sklearn.model_selection import train_test_split
 
-data = pd.read_csv('cancer.csv')
+data = pd.read_csv('num.csv')
 
-x = data.drop(columns = ['diagnosis(1=m, 0=b)'])
+x = data.drop(columns = ['number'])
 
-y = data['diagnosis(1=m, 0=b)']
+y = data['number']
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
 
