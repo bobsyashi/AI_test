@@ -27,5 +27,5 @@ jobs:
     - name: Push Docker image
       run: |
         echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        docker tag my-ai-model:latest my-docker-repo/my-ai-model:latest
-        docker push my-docker-repo/my-ai-model:latest
+        docker tag ai-test:latest ${{ secrets.DOCKER_USERNAME }}/ai-test:tagname
+        docker push ${{ secrets.DOCKER_USERNAME }}/ai-test:tagname
