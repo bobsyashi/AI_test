@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 
 data = pd.read_csv('num.csv')
 
-data['YN'] = data['YN'].map({'yes': 0, 'no', 1})
+data['YN'] = data['YN'].map({'yes': 0, 'no': 1})
 
 data = data.apply(pd.to_numeric, errors='coerce')
 
