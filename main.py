@@ -4,6 +4,10 @@ from sklearn.model_selection import train_test_split
 
 data = pd.read_csv('num.csv')
 
+non_numeric_columns = data.select_dtypes(exclude=['number']).columns
+
+data[non_numeric_columns] = data[non_numeric_columns].apply(pd.to_numeric, errors='coerce')
+
 x = data.drop(columns = ['number'])
 
 y = data['number'].astype(str).str.cat(sep=', ')
