@@ -33,3 +33,7 @@ jobs:
     - name: Make Container
       run: docker run -d -p 80:80 --name my-ai-container my-ai-model
 
+    - name: Verify Container Running
+      run: docker ps
+
+
