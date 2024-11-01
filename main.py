@@ -10,7 +10,7 @@ data[non_numeric_columns] = data[non_numeric_columns].apply(pd.to_numeric, error
 
 x = data.drop(columns = ['number'])
 
-y = data['number'].astype(str).str.cat(sep=', ')
+y = data['number']
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
 
