@@ -4,8 +4,9 @@ WORKDIR /app
 
 COPY . /app
 
-COPY requirements.txt requirements.txt
-RUN pip install -r requirements.txt --upgrade
+RUN pip install --no-cache-dir -r requirements.txt --upgrade
+
+EXPOSE 80
 
 ENV NAME World
 
