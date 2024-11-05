@@ -31,7 +31,7 @@ jobs:
         docker push ${{ secrets.DOCKER_USERNAME }}/ai-test:ai-image
 
     - name: Pull Image
-      run: docker pull bobsayshi/ai-test
+      run: docker pull bobsayshi/ai-test:ai-image
       
     - name: Run Container
       run: docker run -d -p 80:80 --name my-ai-container my-ai-model
