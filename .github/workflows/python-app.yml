@@ -30,6 +30,9 @@ jobs:
         docker tag my-ai-model:latest ${{ secrets.DOCKER_USERNAME }}/ai-test:ai-image
         docker push ${{ secrets.DOCKER_USERNAME }}/ai-test:ai-image
 
+    - name: Pull Image
+      run: docker pull bobsayshi/ai-test
+      
     - name: Run Container
       run: docker run -d -p 80:80 --name my-ai-container my-ai-model
 
