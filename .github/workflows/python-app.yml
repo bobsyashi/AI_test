@@ -34,7 +34,7 @@ jobs:
       run: docker pull bobsayshi/ai-test:ai-image
       
     - name: Run Container
-      run: docker run -d -p 80:80 --name my-ai-container my-ai-model
+      run: docker run -it bobsayshi/ai-test:ai-image echo "In the container"
 
     - name: Verify Container Running
       run: docker ps
